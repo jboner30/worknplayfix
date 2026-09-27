@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="timer-card" aria-label="Focus timer section">
+        <p class="eyebrow">Deep work</p>
+        <h1>Focus Timer</h1>
+
+        <label for="focus-duration">Set your focus period</label>
+        <div class="controls">
+          <input
+            id="focus-duration"
+            type="number"
+            min="1"
+            max="180"
+            step="1"
+            value="25"
+            aria-label="Focus duration in minutes"
+          />
+          <span class="unit">minutes</span>
+        </div>
+
+        <div class="button-row">
+          <button id="start-timer" class="primary">Start</button>
+          <button id="reset-timer" class="secondary" type="button">Reset</button>
+        </div>
+
+        <div id="timer-display" class="timer-display" aria-live="polite">25:00</div>
+      </section>
+    </main>
+
+    <div id="break-modal" class="break-modal hidden" role="dialog" aria-modal="true" aria-labelledby="break-title">
+      <div class="break-panel">
+        <p class="eyebrow">Session complete</p>
+        <h2 id="break-title">Time for a break</h2>
+        <p>Great work. Please take a short break, stretch, hydrate, and come back refreshed.</p>
+        <button id="close-modal" class="primary" type="button">Close</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
